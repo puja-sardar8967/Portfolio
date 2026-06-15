@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Puja Sardar Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:#f4f4f4;
+      color:#222;
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:40px;
+    }
+
+    .container{
+      width:100%;
+      max-width:1200px;
+      background:white;
+      border-radius:30px;
+      padding:50px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .top-section{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:60px;
+      flex-wrap:wrap;
+    }
+
+    /* Profile Image */
+
+    .image-box{
+      flex:1;
+      display:flex;
+      justify-content:center;
+    }
+
+    .image-box img{
+      width:350px;
+      height:350px;
+      object-fit:cover;
+      border-radius:50%;
+      border:8px solid #e5e7eb;
+      box-shadow:0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    /* Text */
+
+    .content{
+      flex:1.3;
+    }
+
+    .content h1{
+      font-size:65px;
+      margin-bottom:15px;
+      color:#111827;
+    }
+
+    .content h2{
+      font-size:30px;
+      margin-bottom:20px;
+      color:#2563eb;
+      font-weight:600;
+    }
+
+    .content p{
+      font-size:17px;
+      line-height:1.9;
+      color:#4b5563;
+      margin-bottom:25px;
+    }
+
+    /* Buttons */
+
+    .buttons{
+      display:flex;
+      flex-wrap:wrap;
+      gap:20px;
+      margin-top:30px;
+    }
+
+    .circle-btn{
+      width:130px;
+      height:130px;
+      border-radius:50%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      font-weight:600;
+      font-size:18px;
+      cursor:pointer;
+      transition:0.3s;
+      color:#111827;
+      text-decoration:none;
+      box-shadow:0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .circle-btn:hover{
+      transform:translateY(-8px) scale(1.05);
+    }
+
+    .resume{
+      background:#bef264;
+    }
+
+    .projects{
+      background:#facc15;
+    }
+
+    .skills{
+      background:#67e8f9;
+    }
+
+    .contact{
+      background:#d1d5db;
+    }
+
+    /* Hidden Sections */
+
+    .section{
+      margin-top:60px;
+      display:none;
+      animation:fade 0.5s ease;
+    }
+
+    @keyframes fade{
+      from{
+        opacity:0;
+        transform:translateY(20px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    .section h3{
+      font-size:35px;
+      margin-bottom:20px;
+      color:#2563eb;
+    }
+
+    .section p,
+    .section li{
+      line-height:2;
+      color:#374151;
+      font-size:16px;
+    }
+
+    ul{
+      padding-left:20px;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin-top:20px;
+    }
+
+    table th{
+      background:#2563eb;
+      color:white;
+      padding:14px;
+    }
+
+    table td{
+      padding:14px;
+      border:1px solid #ddd;
+      text-align:center;
+    }
+
+    /* Responsive */
+
+    @media(max-width:900px){
+
+      .top-section{
+        flex-direction:column;
+        text-align:center;
+      }
+
+      .content h1{
+        font-size:45px;
+      }
+
+      .content h2{
+        font-size:24px;
+      }
+
+      .buttons{
+        justify-content:center;
+      }
+
+      .circle-btn{
+        width:110px;
+        height:110px;
+        font-size:15px;
+      }
+
+      .image-box img{
+        width:280px;
+        height:280px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="top-section">
+
+      <!-- Image -->
+
+      <div class="image-box">
+
+        <!-- Replace image path with your photo -->
+
+        <img src="puja.jpeg" alt="Puja Sardar">
+
+      </div>
+
+      <!-- Content -->
+
+      <div class="content">
+
+        <h1>Puja Sardar</h1>
+
+        <h2>A Bit About Me</h2>
+
+        <p>
+          I am from Hingalganj Sahapur, North 24 Parganas.
+          I am passionate about web development, computer applications,
+          creative design, and smart digital solutions.
+          I enjoy creating projects using HTML, CSS, JavaScript,
+          MS Excel, and basic Python.
+        </p>
+
+        <!-- Buttons -->
+
+        <div class="buttons">
+
+          <a class="circle-btn resume" onclick="showSection('resumeSection')">
+            Resume
+          </a>
+
+          <a class="circle-btn projects" onclick="showSection('projectSection')">
+            Projects
+          </a>
+
+          <a class="circle-btn skills" onclick="showSection('skillSection')">
+            Skills
+          </a>
+
+          <a class="circle-btn contact" onclick="showSection('contactSection')">
+            Contact
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Resume -->
+
+    <div class="section" id="resumeSection">
+
+      <h3>Resume</h3>
+
+      <ul>
+        <li><strong>Name:</strong> Puja Sardar</li>
+        <li><strong>Father's Name:</strong> Arun Sardar</li>
+        <li><strong>Mother's Name:</strong> Kaushalya Sardar</li>
+        <li><strong>Date of Birth:</strong> 22/09/2003</li>
+        <li><strong>Nationality:</strong> Indian</li>
+        <li><strong>Address:</strong> Hingalganj, North 24 Parganas</li>
+      </ul>
+
+      <br>
+
+      <table>
+
+        <tr>
+          <th>Course</th>
+          <th>Board</th>
+          <th>Percentage</th>
+          <th>Year</th>
+        </tr>
+
+        <tr>
+          <td>Secondary</td>
+          <td>W.B.B.S.E</td>
+          <td>58%</td>
+          <td>2020</td>
+        </tr>
+
+        <tr>
+          <td>Higher Secondary</td>
+          <td>W.B.C.H.S</td>
+          <td>87.2%</td>
+          <td>2022</td>
+        </tr>
+
+        <tr>
+          <td>Graduation</td>
+          <td>W.B.S.U</td>
+          <td>74%</td>
+          <td>2025</td>
+        </tr>
+
+      </table>
+
+    </div>
+
+    <!-- Projects -->
+
+    <div class="section" id="projectSection">
+
+      <h3>Projects</h3>
+
+      <ul>
+        <li><strong>Design Projects</strong> - Creative visual and editing works.</li>
+
+        <li><strong>Leave Time Tracker</strong> - Excel-based leave management system.</li>
+
+        <li><strong>Smart Attendance</strong> - Attendance management project.</li>
+      </ul>
+
+    </div>
+
+    <!-- Skills -->
+
+    <div class="section" id="skillSection">
+
+      <h3>Skills</h3>
+
+      <ul>
+        <li>MS Word</li>
+        <li>MS Excel</li>
+        <li>PowerPoint Presentation</li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Basic Python</li>
+      </ul>
+
+    </div>
+
+    <!-- Contact -->
+
+    <div class="section" id="contactSection">
+
+      <h3>Contact Information</h3>
+
+      <p><strong>Phone:</strong> 8967308938</p>
+
+      <p><strong>Email:</strong> pujasardar20202021@gmail.com</p>
+
+    </div>
+
+  </div>
+
+  <!-- JavaScript -->
+
+  <script>
+
+    function showSection(sectionId){
+
+      // Hide all sections
+
+      const sections = document.querySelectorAll('.section');
+
+      sections.forEach(section => {
+        section.style.display = 'none';
+      });
+
+      // Show selected section
+
+      document.getElementById(sectionId).style.display = 'block';
+
+    }
+
+  </script>
+
+</body>
+</html>
